@@ -1,0 +1,41 @@
+function verificarEdad(edad) {
+    if (edad >= 18) {
+        mostrarCalculadora();
+    } else {
+        // Si es menor de 18, se le muestra un mensaje
+        alert("Debes ser mayor de 18 años para acceder a la calculadora.");
+    }
+}
+
+// Función que muestra la calculadora básica
+function mostrarCalculadora() {
+    let operacion = prompt("Ingresa la operación que deseas realizar (+, -, *, /):");
+    let numero1 = parseFloat(prompt("Ingresa el primer número:"));
+    let numero2 = parseFloat(prompt("Ingresa el segundo número:"));
+    
+    let resultado;
+
+    switch (operacion) {
+        case "+":
+            resultado = numero1 + numero2;
+            break;
+        case "-":
+            resultado = numero1 - numero2;
+            break;
+        case "*":
+            resultado = numero1 * numero2;
+            break;
+        case "/":
+            resultado = numero1 / numero2;
+            break;
+        default:
+            alert("Operación no válida");
+            return;
+    }
+
+    alert("El resultado es: " + resultado);
+}
+
+// Pedir al usuario que ingrese su edad
+let edad = parseInt(prompt("Ingresa tu edad:"));
+verificarEdad(edad);
